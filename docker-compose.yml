@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: homeassistant/home-assistant:latest
+    volumes:
+      - ./config:/config
+    environment:
+      - TZ=Asia/Shanghai
+    restart: unless-stopped
+    network_mode: host
